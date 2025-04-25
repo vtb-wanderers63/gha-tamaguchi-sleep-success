@@ -13,6 +13,7 @@ runs:
   steps:
     - run: |
         echo "Sleeping for ${{ inputs.duration }} minute(s)..."
-        sleep $(( ${{ inputs.duration }} * 60 ))
+        duration=${{ inputs.duration }}
+        sleep $(( duration * 60 ))
         echo "Tamaguchi sleep time accomplished."
       shell: bash
