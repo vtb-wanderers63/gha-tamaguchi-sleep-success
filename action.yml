@@ -1,6 +1,7 @@
 name: Sleep and Succeed
 description: Sleeps for a given time (in minutes) and exits successfully
 author: 'vtb-wanderers63'
+
 inputs:
   duration:
     description: 'Duration to sleep in minutes'
@@ -12,6 +13,6 @@ runs:
   steps:
     - run: |
         echo "Sleeping for ${{ inputs.duration }} minute(s)..."
-        sleep $((${ { inputs.duration }} * 60))
+        sleep $(( ${{ inputs.duration }} * 60 ))
         echo "Tamaguchi sleep time accomplished."
       shell: bash
